@@ -28,4 +28,9 @@ class PostController extends Controller
 
         return to_route('posts.index');
     }
+
+    public function show(Post $post)
+    {
+        return Inertia::render('Posts/Show', compact('post'));
+    }
 }

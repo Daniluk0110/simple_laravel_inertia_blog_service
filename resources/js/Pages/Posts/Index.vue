@@ -5,7 +5,7 @@ defineProps({posts: Object})
 </script>
 
 <template>
-    <Head title="Posts"/>
+    <Head><title>All posts</title></Head>
 
     <div class="w-96 mx-auto pt-8">
         <h1 class="text-lg text-center pb-4 mb-5">Posts</h1>
@@ -19,6 +19,10 @@ defineProps({posts: Object})
                 <div>title: {{ post.title }}</div>
                 <div>content: {{ post.content }}</div>
                 <div class="text-sm text-right">date: {{ post.date }}</div>
+
+                <div class="text-sm text-right">
+                    <Link class="text-sky-500" :href="route('posts.show', post.id)">open</Link>
+                </div>
             </div>
         </div>
     </div>
