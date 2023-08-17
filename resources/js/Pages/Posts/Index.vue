@@ -18,8 +18,7 @@ defineProps({posts: Object})
                 <div>id: {{ post.id }}</div>
                 <div>title: {{ post.title }}</div>
                 <div>content: {{ post.content }}</div>
-                <div>created_at: {{ post.created_at }}</div>
-                <div>updated_at: {{ post.updated_at }}</div>
+                <div class="text-sm text-right">date: {{ post.date }}</div>
             </div>
         </div>
     </div>
