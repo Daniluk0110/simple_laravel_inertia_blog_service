@@ -9,6 +9,6 @@ class PostController extends Controller
 {
     public function index()
     {
-        dd(123123123);
+        return Inertia::render('Posts/Index');
     }
 }
