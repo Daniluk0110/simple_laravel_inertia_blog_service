@@ -18,6 +18,9 @@ function store() {
 
     <div class="w-96 mx-auto pt-8">
         <h1 class="text-lg text-center pb-4 mb-5">Create a new post</h1>
+        <div class="mb-4">
+            <Link :href="route('posts.index')" class="text-sm">Back</Link>
+        </div>
         <form @submit.prevent="store">
             <div class="mb-4">
                 <input v-model="form.title" class="mb-1 rounded-full border-gray-300 w-full" type="text"

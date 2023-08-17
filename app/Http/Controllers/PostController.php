@@ -10,7 +10,8 @@ class PostController extends Controller
 {
     public function index()
     {
-        return Inertia::render('Posts/Index');
+        $posts = Post::all();
+        return Inertia::render('Posts/Index', compact('posts'));
     }
 
     public function create()
