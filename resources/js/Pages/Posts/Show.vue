@@ -2,7 +2,9 @@
 import {Head, Link} from "@inertiajs/vue3";
 import MainLayout from "@/Layouts/MainLayout.vue";
 
-defineProps({post: Object})
+defineProps({
+    post: Object
+})
 </script>
 
 <template>

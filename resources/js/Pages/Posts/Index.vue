@@ -22,12 +22,15 @@ defineProps({posts: Object})
                 <div class="text-sm text-right">{{ post.date }}</div>
 
                 <div class="text-sm text-right">
-                    <Link class="text-sky-500" :href="route('posts.show', post.id)">open</Link>
+                    <Link class="text-sky-500" :href="route('posts.show', post.id)">Open</Link>
+                </div>
+
+                <div class="text-sm text-right">
+                    <Link class="text-sky-500" :href="route('posts.edit', post.id)">Edit</Link>
                 </div>
             </div>
         </div>
     </MainLayout>
-
 </template>
 
 <style scoped>
