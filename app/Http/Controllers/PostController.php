@@ -45,4 +45,10 @@ class PostController extends Controller
         $post->update($request->validated());
         return to_route('posts.index');
     }
+
+    public function delete(Post $post)
+    {
+        $post->delete();
+        return to_route('posts.index');
+    }
 }

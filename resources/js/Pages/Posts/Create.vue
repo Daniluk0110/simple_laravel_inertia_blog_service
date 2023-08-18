@@ -9,6 +9,8 @@ const form = reactive({
     content: null,
 })
 
+const props = defineProps({errors: Object})
+
 function store() {
     router.post('/posts', form)
 }
@@ -26,10 +28,12 @@ function store() {
             <div class="mb-4">
                 <input v-model="form.title" class="mb-1 rounded-full border-gray-300 w-full" type="text"
                        placeholder="title"/>
+                <div v-if="props.errors.title" class="text-red-600">{{ props.errors.title }}</div>
             </div>
             <div class="mb-4">
             <textarea v-model="form.content" class="mb-1 rounded-full border-gray-300 w-full"
                       placeholder="content"></textarea>
+                <div v-if="props.errors.content" class="text-red-600">{{ props.errors.content }}</div>
             </div>
             <div>
                 <button

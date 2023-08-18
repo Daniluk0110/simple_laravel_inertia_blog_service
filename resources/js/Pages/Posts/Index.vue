@@ -1,8 +1,12 @@
 <script setup>
-import {Head, Link} from "@inertiajs/vue3";
+import {Head, Link, router} from "@inertiajs/vue3";
 import MainLayout from "@/Layouts/MainLayout.vue";
 
 defineProps({posts: Object})
+
+function deletePost(id) {
+    router.delete(`/posts/${id}`)
+}
 </script>
 
 <template>
@@ -27,6 +31,10 @@ defineProps({posts: Object})
 
                 <div class="text-sm text-right">
                     <Link class="text-sky-500" :href="route('posts.edit', post.id)">Edit</Link>
+                </div>
+
+                <div class="text-sm text-right">
+                    <p @click="deletePost(post.id)" class="cursor-pointer text-red-500">Delete</p>
                 </div>
             </div>
         </div>
