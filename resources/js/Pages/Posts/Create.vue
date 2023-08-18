@@ -2,6 +2,7 @@
 import {Head, Link} from "@inertiajs/vue3";
 import {router} from '@inertiajs/vue3'
 import {reactive} from "vue";
+import MainLayout from "@/Layouts/MainLayout.vue";
 
 const form = reactive({
     title: null,
@@ -14,9 +15,9 @@ function store() {
 </script>
 
 <template>
-    <Head><title>Create Post</title></Head>
+    <MainLayout>
+        <Head><title>Create Post</title></Head>
 
-    <div class="w-96 mx-auto pt-8">
         <h1 class="text-lg text-center pb-4 mb-5">Create a new post</h1>
         <div class="mb-4">
             <Link :href="route('posts.index')" class="text-sm">Back</Link>
@@ -27,8 +28,8 @@ function store() {
                        placeholder="title"/>
             </div>
             <div class="mb-4">
-                <textarea v-model="form.content" class="mb-1 rounded-full border-gray-300 w-full"
-                          placeholder="content"></textarea>
+            <textarea v-model="form.content" class="mb-1 rounded-full border-gray-300 w-full"
+                      placeholder="content"></textarea>
             </div>
             <div>
                 <button
@@ -36,7 +37,7 @@ function store() {
                     type="submit">Store</button>
             </div>
         </form>
-    </div>
+    </MainLayout>
 </template>
 
 <style scoped>

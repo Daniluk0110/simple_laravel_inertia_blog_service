@@ -1,13 +1,13 @@
 <script setup>
 import {Head, Link} from "@inertiajs/vue3";
+import MainLayout from "@/Layouts/MainLayout.vue";
 
 defineProps({post: Object})
 </script>
 
 <template>
-    <Head><title>Show one post</title></Head>
-
-    <div class="w-96 mx-auto pt-8">
+    <MainLayout>
+        <Head><title>Show one post</title></Head>
         <h1 class="text-lg text-center pb-4 mb-2">Posts</h1>
         <div class="mb-4">
             <Link :href="route('posts.index')" class="text-sm">Back</Link>
@@ -19,7 +19,7 @@ defineProps({post: Object})
                 <div>content: {{ post.content }}</div>
             </div>
         </div>
-    </div>
+    </MainLayout>
 </template>
 
 <style scoped>
